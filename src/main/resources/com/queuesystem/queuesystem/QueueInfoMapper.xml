@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.queuesystem.queuesystem.mapper.QueueInfoMapper">
+  <resultMap id="BaseResultMap" type="com.queuesystem.queuesystem.dao.QueueInfo">
+    <!--@mbg.generated-->
+    <!--@Table queue_info-->
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="create_username" jdbcType="VARCHAR" property="createUsername" />
+    <result column="update_username" jdbcType="VARCHAR" property="updateUsername" />
+    <result column="update_time" jdbcType="BIGINT" property="updateTime" />
+    <result column="create_time" jdbcType="BIGINT" property="createTime" />
+    <result column="snow_flake_id" jdbcType="BIGINT" property="snowFlakeId" />
+    <result column="first_name" jdbcType="VARCHAR" property="firstName" />
+    <result column="last_name" jdbcType="VARCHAR" property="lastName" />
+    <result column="user_id" jdbcType="VARCHAR" property="userId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    id, create_username, update_username, update_time, create_time, snow_flake_id, first_name, 
+    last_name, user_id
+  </sql>
+  <update id="updateBatch" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update queue_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="create_username = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.createUsername,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="update_username = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.updateUsername,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="update_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="create_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="snow_flake_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.snowFlakeId,jdbcType=BIGINT}
+        </foreach>
+      </trim>
+      <trim prefix="first_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.firstName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="last_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.lastName,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+      <trim prefix="user_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          when id = #{item.id,jdbcType=BIGINT} then #{item.userId,jdbcType=VARCHAR}
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <update id="updateBatchSelective" parameterType="java.util.List">
+    <!--@mbg.generated-->
+    update queue_info
+    <trim prefix="set" suffixOverrides=",">
+      <trim prefix="create_username = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.createUsername != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.createUsername,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="update_username = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.updateUsername != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.updateUsername,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="update_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.updateTime != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.updateTime,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="create_time = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.createTime != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.createTime,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="snow_flake_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.snowFlakeId != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.snowFlakeId,jdbcType=BIGINT}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="first_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.firstName != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.firstName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="last_name = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.lastName != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.lastName,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+      <trim prefix="user_id = case" suffix="end,">
+        <foreach collection="list" index="index" item="item">
+          <if test="item.userId != null">
+            when id = #{item.id,jdbcType=BIGINT} then #{item.userId,jdbcType=VARCHAR}
+          </if>
+        </foreach>
+      </trim>
+    </trim>
+    where id in
+    <foreach close=")" collection="list" item="item" open="(" separator=", ">
+      #{item.id,jdbcType=BIGINT}
+    </foreach>
+  </update>
+  <insert id="batchInsert" keyColumn="id" keyProperty="id" parameterType="map" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into queue_info
+    (create_username, update_username, update_time, create_time, snow_flake_id, first_name, 
+      last_name, user_id)
+    values
+    <foreach collection="list" item="item" separator=",">
+      (#{item.createUsername,jdbcType=VARCHAR}, #{item.updateUsername,jdbcType=VARCHAR}, 
+        #{item.updateTime,jdbcType=BIGINT}, #{item.createTime,jdbcType=BIGINT}, #{item.snowFlakeId,jdbcType=BIGINT}, 
+        #{item.firstName,jdbcType=VARCHAR}, #{item.lastName,jdbcType=VARCHAR}, #{item.userId,jdbcType=VARCHAR}
+        )
+    </foreach>
+  </insert>
+  <insert id="insertOrUpdate" keyColumn="id" keyProperty="id" parameterType="com.queuesystem.queuesystem.dao.QueueInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into queue_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      create_username,
+      update_username,
+      update_time,
+      create_time,
+      snow_flake_id,
+      first_name,
+      last_name,
+      user_id,
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      #{createUsername,jdbcType=VARCHAR},
+      #{updateUsername,jdbcType=VARCHAR},
+      #{updateTime,jdbcType=BIGINT},
+      #{createTime,jdbcType=BIGINT},
+      #{snowFlakeId,jdbcType=BIGINT},
+      #{firstName,jdbcType=VARCHAR},
+      #{lastName,jdbcType=VARCHAR},
+      #{userId,jdbcType=VARCHAR},
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      create_username = #{createUsername,jdbcType=VARCHAR},
+      update_username = #{updateUsername,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=BIGINT},
+      create_time = #{createTime,jdbcType=BIGINT},
+      snow_flake_id = #{snowFlakeId,jdbcType=BIGINT},
+      first_name = #{firstName,jdbcType=VARCHAR},
+      last_name = #{lastName,jdbcType=VARCHAR},
+      user_id = #{userId,jdbcType=VARCHAR},
+    </trim>
+  </insert>
+  <insert id="insertOrUpdateSelective" keyColumn="id" keyProperty="id" parameterType="com.queuesystem.queuesystem.dao.QueueInfo" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into queue_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="createUsername != null">
+        create_username,
+      </if>
+      <if test="updateUsername != null">
+        update_username,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="snowFlakeId != null">
+        snow_flake_id,
+      </if>
+      <if test="firstName != null">
+        first_name,
+      </if>
+      <if test="lastName != null">
+        last_name,
+      </if>
+      <if test="userId != null">
+        user_id,
+      </if>
+    </trim>
+    values
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="createUsername != null">
+        #{createUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUsername != null">
+        #{updateUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="snowFlakeId != null">
+        #{snowFlakeId,jdbcType=BIGINT},
+      </if>
+      <if test="firstName != null">
+        #{firstName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastName != null">
+        #{lastName,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        #{userId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+    on duplicate key update 
+    <trim suffixOverrides=",">
+      <if test="id != null">
+        id = #{id,jdbcType=BIGINT},
+      </if>
+      <if test="createUsername != null">
+        create_username = #{createUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="updateUsername != null">
+        update_username = #{updateUsername,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=BIGINT},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=BIGINT},
+      </if>
+      <if test="snowFlakeId != null">
+        snow_flake_id = #{snowFlakeId,jdbcType=BIGINT},
+      </if>
+      <if test="firstName != null">
+        first_name = #{firstName,jdbcType=VARCHAR},
+      </if>
+      <if test="lastName != null">
+        last_name = #{lastName,jdbcType=VARCHAR},
+      </if>
+      <if test="userId != null">
+        user_id = #{userId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+</mapper>

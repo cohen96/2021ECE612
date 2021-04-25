@@ -1,0 +1,13 @@
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/QueueSystemApplication.java
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/dao/QueueInfo.java
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/service/impl/QueueNumberServiceImpl.java
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/exception/HandleException.java
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/result/ResultCode.java
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/vo/QueueNumberVO.java
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/result/BaseResult.java
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/dto/QueueBaseDTO.java
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/util/IdWorkerUtil.java
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/controller/QueueNumberController.java
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/config/BeanConfig.java
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/mapper/QueueInfoMapper.java
+/Users/nwy/Downloads/queue-system/src/main/java/com/queuesystem/queuesystem/service/QueueNumberService.java
