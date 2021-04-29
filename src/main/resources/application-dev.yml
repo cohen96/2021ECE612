@@ -1,4 +1,4 @@
-# 数据库相关配置
+# database config
 spring:
   datasource:
       type: com.zaxxer.hikari.HikariDataSource
