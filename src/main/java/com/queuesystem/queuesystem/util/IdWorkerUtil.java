@@ -5,7 +5,7 @@ package com.queuesystem.queuesystem.util;
  *
  * @author
  * description:
- * @since 2021/3/14 下午5:59
+ * @since 2021/3/14 5:59pm
  * version: 1.0.0
  */
 public class IdWorkerUtil {
@@ -94,7 +94,7 @@ public class IdWorkerUtil {
             return System.currentTimeMillis();
         }
 
-        //---------------测试---------------
+        //---------------test---------------
         public static void main(String[] args) {
             IdWorkerUtil worker = new IdWorkerUtil(1,1,1);
             for (int i = 0; i < 30; i++) {

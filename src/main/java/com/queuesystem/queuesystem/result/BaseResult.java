@@ -3,7 +3,7 @@ package com.queuesystem.queuesystem.result;
 
 /**
  * <p>
- * 结果数据类，包含 code, message，data
+ * result data，including code, message，data
  * </p>
  *
  * @author

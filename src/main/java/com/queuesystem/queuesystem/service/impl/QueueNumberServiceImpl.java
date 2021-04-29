@@ -19,7 +19,7 @@ import java.util.List;
  *
  * @author
  * description:
- * @since 2021/3/14 下午6:44
+ * @since 2021/3/14 6:44pm
  * version: 1.0.0
  */
 @Slf4j
@@ -64,7 +64,7 @@ public class QueueNumberServiceImpl implements QueueNumberService {
         queueNumberVO.setUserId(userId);
         queueNumberVO.setQueueIndex(queueInfo1.getId().toString());
         queueNumberVO.setQueueTotal(total.toString());
-        queueNumberVO.setQueueInfo(String.format("目前队列总人数%s, 您目前的位置为%s", total, queueInfo1.getId()));
+        queueNumberVO.setQueueInfo(String.format("current queue %s, your position is %s", total, queueInfo1.getId()));
         return BaseResult.of(queueNumberVO);
     }
 }

@@ -9,7 +9,7 @@ import com.queuesystem.queuesystem.vo.QueueNumberVO;
  *
  * @author 
  * description:
- * @since 2021/3/14 下午6:44
+ * @since 2021/3/14 6:44pm
  * version: 1.0.0
  */
 public interface QueueNumberService {

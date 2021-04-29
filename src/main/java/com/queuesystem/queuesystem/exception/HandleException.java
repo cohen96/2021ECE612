@@ -40,7 +40,7 @@ public class HandleException {
     }
 
     /**
-     * 参数异常
+     * arg error
      *
      * @param e
      * @return
@@ -52,7 +52,7 @@ public class HandleException {
     }
 
     /**
-     * 参数异常
+     * arg error
      *
      * @param e
      * @return
@@ -64,7 +64,7 @@ public class HandleException {
     }
 
     /**
-     * 参数异常
+     * arg error
      *
      * @param e
      * @return
@@ -76,7 +76,7 @@ public class HandleException {
     }
 
     /**
-     * 参数异常
+     * arg error
      *
      * @param validException
      * @return
@@ -96,13 +96,13 @@ public class HandleException {
 
     @ExceptionHandler(FileNotFoundException.class)
     public BaseResult<Object> fileNotFoundException(FileNotFoundException e) {
-        log.warn("文件不存在", e);
+        log.warn("file does not exist", e);
         return new BaseResult<>(ResultCode.RESOURCE_NOT_FOUND).setMessage(e.getMessage());
     }
 
     @ExceptionHandler(AccessDeniedException.class)
     public BaseResult<Object> accessDeniedException(AccessDeniedException e){
-        log.warn("不允许访问", e);
+        log.warn("access denied", e);
         return new BaseResult<>(ResultCode.FORBIDDEN).setMessage(e.getMessage());
     }
 

@@ -46,25 +46,25 @@ public class QueueInfo {
     private Long updateTime;
 
     /**
-     * 创建时间
+     * create time
      */
     @TableField(value = "create_time")
     private Long createTime;
 
     /**
-     * 标识id
+     * id
      */
     @TableField(value = "snow_flake_id")
     private Long snowFlakeId;
 
     /**
-     * 排队人firstName
+     * user firstName
      */
     @TableField(value = "first_name")
     private String firstName;
 
     /**
-     * 排队人lastName
+     * user lastName
      */
     @TableField(value = "last_name")
     private String lastName;
